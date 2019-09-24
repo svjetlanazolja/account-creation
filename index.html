@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="proizvodi.js"></script>
+    <script src="script.js"></script>
+    <style>
+        .red {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body onload="popuniProizvode()">
+    <h1>Novi racun</h1>
+    <div class="red">
+        Datum: <div id="datum"></div>
+        Kupac: <input type="text" id="kupac" autofocus/>
+    </div>
+    <hr />
+    <div class="red">
+        <form action="javascript:dodajStavku()">
+            Proizvod: <select id="proizvodi" name="proizvodi" required></select>            
+            Kolicina: <input type="number" min="0" id="kolicina" name="kolicina" required/>
+            <input type="submit" value="Dodaj" />
+        </form>
+    </div>
+    <div id="stavke">
+
+    </div>
+    <div class="red">
+        Ukupno za placanje: <div id="ukupno"></div>
+        <button onclick="sacuvajRacun()">Sacuvaj racun</button>
+    </div>
+</body>
+
+</html>
